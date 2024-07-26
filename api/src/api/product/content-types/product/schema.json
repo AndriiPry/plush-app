@@ -66,6 +66,20 @@
         "featured",
         "trending"
       ]
+    },
+    "startDate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "MinFundedquantity": {
+      "type": "biginteger"
+    },
+    "total_funded": {
+      "type": "biginteger"
     }
   }
 }

@@ -932,8 +932,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     productDetails: Attribute.Text;
     termsShippingReturn: Attribute.Text;
-    StartDate: Attribute.DateTime;
-    nimimSales: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
