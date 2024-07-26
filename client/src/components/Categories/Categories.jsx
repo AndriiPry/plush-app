@@ -7,23 +7,23 @@ const Categories = () => {
     <div className="categories">
       <div className="col">
         <div className="row">
-          {/* <img
+          <img
             src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-          /> */}
+          />
           <button>
-            <Link className="link" to="/products/1">
+            <Link className="link" to="/products/all">
               Live Campaigns
             </Link>
           </button>
         </div>
         <div className="row">
-          {/* <img
+          <img
             src="https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-          /> */}
+          />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/products/all" className="link">
               Ongoing Campaigns
             </Link>
           </button>
@@ -32,12 +32,12 @@ const Categories = () => {
       <div className="col">
         <div className="row">
           {" "}
-          {/* <img
+          <img
             src="https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-          /> */}
+          />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/products/all" className="link">
               New Season
             </Link>
           </button>
@@ -52,7 +52,7 @@ const Categories = () => {
                 alt=""
               />
               <button>
-                <Link to="/products/1" className="link">
+                <Link to="/products/all" className="link">
                   Men
                 </Link>
               </button>
@@ -66,7 +66,7 @@ const Categories = () => {
                 alt=""
               />
               <button>
-                <Link to="/products/1" className="link">
+                <Link to="/products/all" className="link">
                   Accessories
                 </Link>
               </button>
@@ -79,7 +79,7 @@ const Categories = () => {
             alt=""
           />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/products/all" className="link">
               Shoes
             </Link>
           </button>

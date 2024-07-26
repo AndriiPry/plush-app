@@ -15,65 +15,26 @@ const Product = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
 
-  // Countdown timer state
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    return () => clearTimeout(timer);
-  });
-
-  function calculateTimeLeft() {
-    const difference = +new Date('2024-12-31') - +new Date();
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-
-    return timeLeft;
-  }
-
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <span key={interval}>
-        {timeLeft[interval]} {interval}{' '}
-      </span>
-    );
-  });
-
   return (
     <div className="product">
       {loading ? (
         'loading'
       ) : (
         <>
-          {/* Countdown Timer */}
-          <div className="countdown-timer">
-            {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-          </div>
-
           {/* Progress Bar */}
           <div className="progress-bar">
             <div className="progress" style={{ width: `${data?.attributes?.fundedPercentage}%` }}>
-              {data?.attributes?.fundedPercentage}%
+              {data?.attributes?.fundedPercentage}
             </div>
           </div>
 
           <div className="left">
+            <div className="mainImg">
+              <img
+                src={`${process.env.REACT_APP_UPLOAD_URL}${data?.attributes[selectedImg]?.data?.attributes?.url}`}
+                alt=""
+              />
+            </div>
             <div className="images">
               <img
                 src={`${process.env.REACT_APP_UPLOAD_URL}${data?.attributes?.img?.data?.attributes?.url}`}
@@ -84,12 +45,6 @@ const Product = () => {
                 src={`${process.env.REACT_APP_UPLOAD_URL}${data?.attributes?.img2?.data?.attributes?.url}`}
                 alt=""
                 onClick={() => setSelectedImg('img2')}
-              />
-            </div>
-            <div className="mainImg">
-              <img
-                src={`${process.env.REACT_APP_UPLOAD_URL}${data?.attributes[selectedImg]?.data?.attributes?.url}`}
-                alt=""
               />
             </div>
           </div>

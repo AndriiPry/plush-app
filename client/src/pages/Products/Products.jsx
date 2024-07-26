@@ -26,9 +26,9 @@ const Products = () => {
 
   return (
     <div className="products">
-      <div className="left">
+      <div className="top">
         <div className="filterItem">
-          <h2>Product Categories</h2>
+          <h2>Explore Campaigns</h2>
           {data?.map((item) => (
             <div className="inputItem" key={item.id}>
               <input
@@ -42,7 +42,7 @@ const Products = () => {
           ))}
         </div>
       </div>
-      <div className="right">
+      <div className="bottom">
         <List catId={catId} subCats={selectedSubCats} />
       </div>
     </div>

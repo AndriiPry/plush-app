@@ -77,6 +77,12 @@
     },
     "termsShippingReturn": {
       "type": "text"
+    },
+    "StartDate": {
+      "type": "datetime"
+    },
+    "nimimSales": {
+      "type": "integer"
     }
   }
 }
