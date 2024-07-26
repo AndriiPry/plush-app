@@ -5,34 +5,42 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="top">
+        
         <div className="item">
-          <h1>About</h1>
-          <span>How it works</span>
-          <span>Shipment and Returns</span>
-          <span>Terms and Conditions</span>
-          <span>What is Plush.fun</span>
-      
+          <h1>About Plush.fun</h1>
+          <span>
+            We are a plush toys crowdfunding platform that helps creators and influencers bring custom products to life. The company specializes in producing high-quality plush toys based on characters and designs from popular online creators.  
+          </span>
         </div>
+        
         <div className="item">
-          <h1>Support</h1>
+          <h1>How it Works</h1>
+          <span>Shipping and Delivery</span>
+          <span>Returns and Refunds</span>
           <span>FAQ</span>
-          <span>Customer Support</span>
-          <span>Stores</span>
-          <span>Compare</span>
+          <span>Full Terms and Conditions</span>
           <span>Cookies</span>
         </div>
+        
+        <div className="item">
+          <h1>Customer Support</h1>
+          <span>Order Tracking</span>
+          <span>Help Center</span>
+        </div>
 
 
-
+      
       </div>
       <div className="bottom">
         <div className="left">
-          <span className="logo">Plush.fun</span>
+          <span className="logo">PLUSH.FUN</span>
           <span className="copyright">
             © Copyright 2024. All Rights Reserved
           </span>
         </div>
-       
+        <div className="right">
+          <img src="/img/payment.png" alt="" />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 .navbar {
   height: 80px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   .wrapper {
     padding: 10px 30px;
@@ -9,37 +8,41 @@
     justify-content: space-between;
     position: relative;
 
+    .item {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+
     .left {
-      img {
-        width: 200px;
-        height: auto;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      &.open {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        .item {
+          padding: 10px 0;
+        }
       }
     }
 
     .center {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
+      font-size: 30px;
+      letter-spacing: 2px;
 
-      .menu {
-        display: flex;
-        gap: 25px;
-
-        &.open {
-          display: block;
-          position: absolute;
-          top: 80px;
-          left: 0;
-          width: 100%;
-          background-color: white;
-          padding: 20px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-          .item {
-            padding: 10px 0;
-          }
-        }
+      img {
+        width: 100%;
+        max-width: 200px; /* Adjust as needed */
+        height: auto;
       }
     }
 
@@ -73,29 +76,22 @@
           }
         }
       }
+    }
 
-      .menu-icon {
-        display: none;
-      }
+    .menu-icon {
+      display: none;
+      cursor: pointer;
     }
   }
 
   @media (max-width: 900px) {
     .wrapper {
       .left {
+        display: none;
+      }
+
+      .menu-icon {
         display: block;
-      }
-
-      .center {
-        .menu {
-          display: none;
-        }
-      }
-
-      .right {
-        .menu-icon {
-          display: block;
-        }
       }
     }
   }
@@ -104,17 +100,10 @@
     .wrapper {
       padding: 10px 20px;
 
-      .left {
+      .center {
         img {
           width: 150px;
-        }
-      }
-
-      .center {
-        .menu {
-          &.open {
-            left: 0;
-          }
+          height: auto;
         }
       }
     }
